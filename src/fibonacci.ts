@@ -20,17 +20,23 @@ export const computeFibonacciNumber = (position: number | null, recursion: boole
         return recursiveFibonacci(1, 1, position - 2);
     }
 
-    let i = 1;
-    let j = 1;
+     if (position === 1 || position === 2) {
+        return 1;
+    }
+
+    let smallFibonacciNumber = 1;
+    let largeFibonacciNumber = 1;
+
+    let currentPosition = 2;
 
     let currentPosition = 2;
     while (currentPosition < notNullPosition) {
-        const temp = i;
-        i = j;
-        j += temp;
+        const nextFibonacciNumber = smallFibonacciNumber + largeFibonacciNumber;
+        smallFibonacciNumber = largeFibonacciNumber;
+        largeFibonacciNumber = nextFibonacciNumber;
         currentPosition++;
     }
-    return j;
+    return largeFibonacciNumber;
 };
 
 const recursiveFibonacci = (previous: number, current: number, stepsLeft: number): number => {
