@@ -28,8 +28,6 @@ export const computeFibonacciNumber = (position: number | null, recursion: boole
     let largeFibonacciNumber = 1;
 
     let currentPosition = 2;
-
-    let currentPosition = 2;
     while (currentPosition < notNullPosition) {
         const nextFibonacciNumber = smallFibonacciNumber + largeFibonacciNumber;
         smallFibonacciNumber = largeFibonacciNumber;
